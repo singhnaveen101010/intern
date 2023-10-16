@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+<style>body{
+    margin:0px;
+}
+.sticky{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:2;
+}
+.header {
+   text-align: center;
+    background-color:blue;
+    color:white;
+    padding:2px;
+   font-family: 'Noto Sans', sans-serif;
+   
+  
+}
+.hide{
+    display:none;
+}
+.header>p{
+    position:absolute;
+    display:inline;
+    right:1rem;
+    color:white;
+    margin:0px;
+    cursor:pointer;
+
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+
+.navbar{
+    
+    background-color: white;
+    display:flex;
+    justify-content:space-between;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight:500;
+    font-size:1.2rem;
+    z-index:1;
+}
+.sides{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: center;
+    gap:10px;
+    padding:0 5%;
+
+}
+.brand-name{
+    font-size:1.5em;
+    font-weight:600;
+}
+
+.product-area{
+    margin-top:100px;
+    display:flex;
+    width:100%;
+  justify-content:space-between;
+
+  font-family:  'Noto Sans', sans-serif;
+    
+ }
+
+
+.product-disc{
+    
+    /* .... */
+    position:relative;
+    max-width:48rem;
+
+ /* .... */
+   
+    width:50%;
+    padding:0 10%;
+  
+   
+}
+.text{
+    width:30%;
+    padding:0 10%;
+
+}
+.scrollmenu {
+    overflow:auto;
+    white-space:nowrap;
+    font-size:0.9rem;
+    
+    
+  }
+  .onmobile{
+    display:flex;
+    justify-content:space-between;
+    margin-top:100px;
+    padding:0 50px;
+  }
+ .scrollmenu a {
+    font-family:'Noto Sans', sans-serif;
+    display: inline-block;
+    color:black;
+    text-align: center;
+    padding:10px;
+    text-decoration: none;
+  }
+  
+  div.scrollmenu a:hover {
+   color:blue;
+  }
+  
+  .product-img{
+    
+    margin:20% auto 0px;
+    height:90vh;
+    
+    border-radius:50%;
+    border:1px solid black;
+    display:flex;
+    aspect-ratio:12/18;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+
+    
+}
+.product-img img{
+    padding:70px;
+    height:65vh;
+    flex:1 0;
+    scroll-snap-align:start;
+   
+}
+.slider-nav{
+    display:flex;
+    padding:10px 0 20px;
+    justify-content:center;
+    column-gap:1rem;
+    
+}
+.slider-nav a{
+    width:1rem;
+    height:1rem;
+    border-radius:50%;
+    border:1px solid black;
+    
+}
+
+
+
+@media  (max-width:760px) {
+    .onmobile{
+        display:flex;
+    }
+    .scrollmenu{
+        display:none;
+    }
+    .product-area{
+        display:block;
+        margin:0 20%;
+        width:80%;
+    }
+    
+    .product-disc{
+        padding:0;
+        width:80%;
+        margin-left:0; 
+    }
+    .text{
+      padding:0;
+       width:80%;
+       margin-left:0;
+       
+    }
+   
+       
+  }
+@media (min-width:760px){
+    .onmobile{
+        display:none;
+    }
+    .scrollmenu{
+        display:flex;
+    }
+}
+
+
+.btn{
+    background-color: black;
+    color:white;
+    border-radius:25px;
+    width:100%;
+    padding:5%;
+    border:0px;
+    transition:0.5s;
+}
+.btn:hover{
+   background-color:blue;
+   
+}
+.accordian li{
+    list-style: none;
+   padding:5px 0;
+}
+.accordian li label{
+    cursor:pointer;
+    font-size:1rem;
+
+}
+
+.accordian li label:after{
+    position:absolute;
+    right:150px;
+    content:'+';
+    font-size:20px;
+    
+}
+.accordian input[type="radio"]{
+    display:none;
+}
+.accordian .content{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+.accordian input[type="radio"]:checked+label+.content{
+    max-height:600px;
+}
+
+
+
+.accordian input[type="radio"]:checked+label:after{
+    content:'—';
+    font-size:1rem;
+   
+}
+.prohead h4{
+    font-size:1.5rem;
+}
+</style>
+</head>
+<body>
+   
+   
+    <div class="sticky">
+         <div class="header">
+       use code<strong> DCEM</strong> for 50% off
+       <p>✕</p>
+         </div>
+    
+      <div class="navbar">
+         <div class="sides">
+            <a href="">SHOP</a>
+            <a href="">STORY</a>
+        </div>
+         <div class="brand-name"><a href="">DECEM</a></div>
+         <div class="sides"><a href="">BASKET(0)</a></div>
+      </div>
+    </div>
+    <div class="onmobile">
+        <a href="">LONDON DRY</a>
+                <a href="">SPICED BLEND</a>
+                <a href="">APERITIF</a>
+                <a href="">TRIO</a>
+    </div>
+    <div class="product-area">
+      <div class="product-disc slider-wrapper">
+              <div class="product-img slider">
+                  <img id="slide-1" src="./images/slide1.webp" alt="">
+                  <img id="slide-2" src="./images/slide2.webp" alt="">
+                  <img id="slide-3" src="./images/slide3.webp" alt="">
+              </div>
+              <div class="slider-nav" >
+                    <a id="one" class="slide1" href="#slide-1"></a>
+                    <a id="two" class="slide1" href="#slide-2"></a>
+                    <a id="three" class="slide1" href="#slide-3"></a>
+               
+              </div>
+              
+        </div>
+        <div class="text">
+            <div class="scrollmenu">
+                <a href="">LONDON DRY</a>
+                <a href="">SPICED BLEND</a>
+                <a href="">APERITIF</a>
+                <a href="">TRIO</a>
+                
+            </div> 
+            <hr>
+            <div class="prohead" >
+                <h4 style="font-weight: 400;"><strong>SPICED BLEND</strong><br>
+                <em style="font-family: 'Libre Baskerville', serif;">made with</em> <span style="font-family: 'Libre Baskerville', serif;">Carribean Rum</span> </h4>
+                <div style="display:flex;justify-content: space-between; font-family: 'Libre Baskerville', serif;"><p>Blended <i>in</i> England</p><p>10%vol / 700ml</p></div>
+                <button class="btn">£29.95 — Add to Bag</button>
+                 <div style="text-align:center; color:blue;"><p>FREE UK DELIVERY</p></div>
+                <hr>
+                <ul class="accordian">
+                    <li>
+                         <input type="radio" name="accordian" id="first">
+                         <label for="first">DISCRIPTION</label>
+                         <div class="content">
+                            <p>
+                                Blending a duo of light and white Caribbean rums from Martinique and Dominican Republic as the smooth base. Spices are then added and the mix is allowed to steep for 2 days to draw out all of the flavour before being filtered and masterfully blended with natural distillates to 10%ABV. The result is a buttery, caramel-forward, savoury and spicy light spirit with a big impact both on the nose and the taste buds.
+                            </p>
+                         </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="accordian" id="second">
+                        <label for="second">TASTE</label>
+                        <div class="content">
+                           <p>
+                            Deep bonfire toffee, warming savoury spice, rounded honey sweetness, buttery caramel throughout with a hint of tropical fruit.
+                           </p>
+                        </div>
+                   </li>
+                   <li>
+                    <input type="radio" name="accordian" id="third">
+                    <label for="third">SERVE</label>
+                    <div class="content">
+                       <p>
+                        Simply serve 50ml chilled over ice with 150ml premium Ginger Ale and a lime wedge. 2.3% ABV.
+                       </p>
+                    </div>
+               </li>
+                </ul>
+              </div>
+           
+           
+        </div>
+    </div>
+   
+    
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(".header p").on("click",()=>{
+        $(".header").addClass("hide",10000)
+    });
+     $(".slider-nav a").on("click",function(){
+        $(".slider-nav a").css("background-color","white");
+        $(this).css("background-color","black");
+     })
+     </script>
+</body>
+</html>
